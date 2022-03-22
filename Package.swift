@@ -16,7 +16,10 @@ let package = Package(
     products: [
         .library(
             name: "SwiftCreationEngineCommon",
-            targets: ["SwiftCreationEngineCommon"]),
+            targets: [
+                "SwiftCreationEngineCommon"
+            ]
+        ),
     ],
 
     dependencies: [
@@ -27,9 +30,17 @@ let package = Package(
     targets: [
         .target(
             name: "SwiftCreationEngineCommon",
-            dependencies: ["BinaryCoding"]),
+            dependencies: [
+                "BinaryCoding"
+            ]
+        ),
+        
         .testTarget(
             name: "SwiftCreationEngineCommonTests",
-            dependencies: ["SwiftCreationEngineCommon", "XCTestExtensions"]),
+            dependencies: [
+                "SwiftCreationEngineCommon",
+                "XCTestExtensions"
+            ]
+        ),
     ]
 )

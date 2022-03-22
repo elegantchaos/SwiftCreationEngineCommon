@@ -23,7 +23,7 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(url: "https://github.com/elegantchaos/BinaryCoding.git", branch: "main"),
+        .package(url: "https://github.com/elegantchaos/BinaryCoding.git", from: "1.0.2"),
         .package(url: "https://github.com/elegantchaos/XCTestExtensions.git", from: "1.4.2")
     ],
 

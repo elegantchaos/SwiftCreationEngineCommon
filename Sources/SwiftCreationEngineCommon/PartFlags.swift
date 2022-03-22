@@ -41,6 +41,14 @@ public struct PartFlags: OptionSetFromEnum
         case arm_right                      // 59
         case misc2                          // 60
         case fx01                           // 61
+
+        public var caseIndex: Int {
+            return Self.allCases.firstIndex(of: self)!
+        }
+        
+        public var slot: PartSlot {
+            return PartSlot(rawValue: caseIndex + 30)!
+        }
     }
     
     public init(rawValue: UInt32) {

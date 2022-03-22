@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.6
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 //  Created by Sam Deane on 22/03/2022.
@@ -8,24 +8,28 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftCreationKitCommon",
+    name: "SwiftCreationEngineCommon",
     platforms: [
-        .macOS(.v12), .iOS(.v15), .tvOS(.v15), .watchOS(.v8)
+        .macOS(.v12)
     ],
+
     products: [
         .library(
-            name: "SwiftCreationKitCommon",
-            targets: ["SwiftCreationKitCommon"]),
+            name: "SwiftCreationEngineCommon",
+            targets: ["SwiftCreationEngineCommon"]),
     ],
+
     dependencies: [
+        .package(url: "https://github.com/elegantchaos/BinaryCoding.git", branch: "main"),
         .package(url: "https://github.com/elegantchaos/XCTestExtensions.git", from: "1.4.2")
     ],
+
     targets: [
         .target(
-            name: "SwiftCreationKitCommon",
-            dependencies: []),
+            name: "SwiftCreationEngineCommon",
+            dependencies: ["BinaryCoding"]),
         .testTarget(
-            name: "SwiftCreationKitCommonTests",
-            dependencies: ["SwiftCreationKitCommon", "XCTestExtensions"]),
+            name: "SwiftCreationEngineCommonTests",
+            dependencies: ["SwiftCreationEngineCommon", "XCTestExtensions"]),
     ]
 )
